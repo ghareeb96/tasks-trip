@@ -1,0 +1,177 @@
+@import './vars';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: rgb(242,242,242);
+    background: linear-gradient(135deg, rgba(242,242,242,1) 0%, rgba(178,206,212,1) 100%);}
+
+
+button {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+
+.App {
+    width: 100%;
+    height: 100%;
+
+    .container {
+        width: 90%;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 1400px;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+
+        .list {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 8px rgba(70, 70, 70, 0.541);
+            min-height: 70vh;
+            width: 20%;
+            min-width: 200px;
+
+            
+
+            .headline {
+                text-align: center;
+                background-color: rgb(124, 124, 124);
+
+
+                h3 {
+                    padding: 1rem 0;
+                    color: #fff;
+                }
+            }
+
+            &:nth-child(2) {
+                .tasks-container {
+                    .task {
+                        background-color: rgb(214, 224, 122);
+
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .tasks-container {
+                    .task {
+                        background-color: rgb(235, 195, 123);
+
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .tasks-container {
+                    .task {
+                        background-color: rgb(121, 224, 107);
+
+                    }
+                }
+            }
+
+            .tasks-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .5rem;
+                padding: .5rem 0;
+                animation: popUp;
+                animation-duration: 0.4s;
+
+
+
+                .task {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 100px;
+                    width: 95%;
+                    padding: .4rem;
+                    background: rgb(109, 224, 219);
+                    animation: popUp;
+                    animation-duration: 0.4s;
+
+                    .arrows-container {
+                        margin-left: auto;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        button {
+                            color: #000;
+                            background-color: rgb(104, 104, 104);
+                            padding: .2rem .4rem;
+                            margin-left: .2rem;
+                            transition: all 0.2s ease-out;
+
+                            &:hover {
+                                transform: scale(.8);
+                            }
+
+                            .icon {
+                                width: .8rem;
+                                height: .8rem;
+                                fill: rgb(255, 255, 255);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+@media screen and (max-width: $large-screen) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: $medium-screen) {
+
+    html {
+        font-size: 16px;
+    }
+
+    .App{
+        .container{
+            .list{
+                min-height: 40%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $small-screen) {
+
+    html {
+        font-size: 14px;
+    }
+
+}
